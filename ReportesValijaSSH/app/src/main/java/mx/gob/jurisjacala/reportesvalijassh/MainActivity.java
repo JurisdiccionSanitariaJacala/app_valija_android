@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        //setContentView(R.layout.activity_main);
 
         setSupportActionBar(binding.toolbar);
 
