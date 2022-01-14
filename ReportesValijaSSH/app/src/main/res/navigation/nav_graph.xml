@@ -22,14 +22,17 @@
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_SecondFragment_to_ThirdFragment"
+            app:destination="@id/ThirdFragment" />
     </fragment>
     <fragment
-        android:id="@+id/"
+        android:id="@+id/ThirdFragment"
         android:name="mx.gob.jurisjacala.reportesvalijassh.ThirdFragment"
-        android:label="@string/third_fragment"
+        android:label="Third fragment"
         tools:layout="@layout/fragment_third">
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            android:id="@+id/action_ThirdFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
 </navigation>

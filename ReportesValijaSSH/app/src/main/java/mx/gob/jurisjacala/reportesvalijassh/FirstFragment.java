@@ -26,6 +26,7 @@ public class FirstFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
+            
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(FirstFragment.this)
