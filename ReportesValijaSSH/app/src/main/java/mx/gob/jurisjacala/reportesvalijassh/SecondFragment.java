@@ -1,6 +1,7 @@
 package mx.gob.jurisjacala.reportesvalijassh;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,13 +15,10 @@ import mx.gob.jurisjacala.reportesvalijassh.databinding.FragmentSecondBinding;
 public class SecondFragment extends Fragment {
 
     private FragmentSecondBinding binding;
+    private Fragment ThirdFragment;
 
     @Override
-    public View onCreateView(
-            LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState
-    ) {
-
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentSecondBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
@@ -31,8 +29,12 @@ public class SecondFragment extends Fragment {
         binding.buttonThird.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NavHostFragment.findNavController(ThirdFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_ThirdFragment);
+                try{
+                    NavHostFragment.findNavController(ThirdFragment).navigate(R.id.action_SecondFragment_to_ThirdFragment);
+                } catch(Exception e) {
+                    Log.e("SecondFragment",e.getMessage());
+                    e.getStackTrace();
+                }
             }
         });
 
