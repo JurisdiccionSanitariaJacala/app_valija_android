@@ -65,4 +65,9 @@ public class ThirdFragment extends Fragment {
         binding = FragmentThirdBinding.inflate(inflater,container,false);
         return binding.getRoot();
     }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+    }
 }

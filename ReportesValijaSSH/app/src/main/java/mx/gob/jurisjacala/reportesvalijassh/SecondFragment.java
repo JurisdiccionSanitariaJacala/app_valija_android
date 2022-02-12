@@ -11,17 +11,19 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import mx.gob.jurisjacala.reportesvalijassh.databinding.FragmentSecondBinding;
+import mx.gob.jurisjacala.reportesvalijassh.ThirdFragment;
 
 public class SecondFragment extends Fragment {
 
     private FragmentSecondBinding binding;
-    private Fragment ThirdFragment;
+    private Fragment thirdFragment;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentSecondBinding.inflate(inflater, container, false);
+        thirdFragment = new ThirdFragment();
         return binding.getRoot();
-    }
+    } 
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -30,10 +32,10 @@ public class SecondFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 try{
-                    NavHostFragment.findNavController(ThirdFragment).navigate(R.id.action_SecondFragment_to_ThirdFragment);
+                    NavHostFragment.findNavController(thirdFragment).navigate(R.id.action_SecondFragment_to_ThirdFragment);
                 } catch(Exception e) {
-                    Log.e("SecondFragment",e.getMessage());
-                    e.getStackTrace();
+                    Log.e("SecondFragment","ERROR: "+e.getMessage());
+                    e.printStackTrace();
                 }
             }
         });
